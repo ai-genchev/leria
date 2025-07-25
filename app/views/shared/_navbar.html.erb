@@ -1,7 +1,35 @@
-<nav style="padding: 1rem; background-color: #2f2921;">
-  <ul style="display: flex; gap: 1rem; list-style: none; margin: 0; padding: 0;">
+<nav style="background-color: #2f2921; padding: 1rem; position: relative;">
+  <button id="menu-toggle" style="background: none; border: none; color: #9e8123; font-size: 1.5rem; cursor: pointer;">
+    ☰
+  </button>
+
+  <ul id="menu" style="
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #2f2921;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  ">
     <li><%= link_to "Home", root_path, style: "color: #9e8123;" %></li>
     <li><%= link_to "Gallery", gallery_path, style: "color: #9e8123;" %></li>
     <li><%= link_to "Contact", contact_path, style: "color: #9e8123;" %></li>
   </ul>
 </nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    toggle.addEventListener("click", function () {
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    });
+  });
+</script>
