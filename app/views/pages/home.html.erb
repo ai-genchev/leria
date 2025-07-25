@@ -1,0 +1,41 @@
+<section style="text-align: center; padding: 4rem 1rem; background: linear-gradient(to bottom right, #19171b, #2f2921);">
+  <img src="<%= asset_path('not-found.jpg') %>" alt="Hero" style="max-width: 100%; height: auto; border-radius: 12px;">
+  <h1 style="color: #9e8123; margin-top: 1rem;">Random Name</h1>
+  <p style="font-size: 1.2rem;">Luxury photography for extraordinary moments</p>
+</section>
+
+<section style="padding: 2rem 1rem;">
+  <h2 style="color: #9e8123;">I am Random Name</h2>
+  <p>I specialize in capturing high-end automotive beauty, elegant weddings, and stylish commercial spaces.</p>
+</section>
+
+<section style="padding: 2rem 1rem;">
+  <h2 style="color: #9e8123;">What I Photograph</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+    <% ["Luxury Cars", "Weddings", "Hotel Interiors"].each do |item| %>
+      <div style="flex: 1 1 30%; background-color: #563a17; padding: 1rem; border-radius: 10px;">
+        <img src="<%= asset_path('not-found.jpg') %>" alt="<%= item %>" style="width: 100%; height: auto; border-radius: 8px;">
+        <h3 style="color: #9e8123; margin-top: 0.5rem;"><%= item %></h3>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<section style="text-align: center; padding: 2rem 1rem;">
+  <p>Follow me for more:</p>
+  <div>
+    <a href="#" style="color: #9e8123; margin: 0 0.5rem;">Instagram</a>
+    <a href="#" style="color: #9e8123; margin: 0 0.5rem;">TikTok</a>
+    <a href="#" style="color: #9e8123; margin: 0 0.5rem;">YouTube</a>
+  </div>
+</section>
+
+<section style="padding: 2rem 1rem;">
+  <h2 style="color: #9e8123;">About My Work</h2>
+  <p>I capture high-end visuals with a focus on automotive elegance. Whether it’s a Ferrari, a bridal moment, or a boutique hotel — every frame is composed with care.</p>
+
+  <details style="margin-top: 1rem;">
+    <summary style="cursor: pointer; color: #9e8123;">Do you work internationally?</summary>
+    <p>Yes, I travel worldwide for select projects.</p>
+  </details>
+</section>
