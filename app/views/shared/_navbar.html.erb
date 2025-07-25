@@ -1,53 +1,94 @@
-<header style="
-  background-color: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-">
-  <nav style="
-    position: relative;
-    padding: 1em;
-  ">
-    <button id="menu-toggle" style="
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 1.5rem;
-      cursor: pointer;
-      position: absolute;
-    ">
-      ☰
+<header class="site-header">
+  <button id="menu-toggle" class="menu-toggle">☰</button>
+  <h1 class="site-title">Martin Nikolaev</h1>
+  <nav id="menu" class="navbar hidden">
+    <button id="menu-close">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M40.78 7.27a2 2 0 0 0-1.4.62L25.06 22.22 10.71 7.9a2 2 0 0 0-1.43-.61 2 2 0 0 0-1.4 3.43l14.34 14.34L7.9 39.4a2 2 0 1 0 2.82 2.82l14.34-14.33L39.4 42.2a2 2 0 1 0 2.82-2.82L27.88 25.05 42.2 10.71a2 2 0 0 0-1.43-3.44"/></svg>
     </button>
-
-    <h1 style="
-      position: absolute;
-      color: #fff;
-      margin: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      text-transform: uppercase;
-      font-family: 'Montserrat', sans-serif;
-    ">Martin Nikolaev</h1>
-
-    <ul id="menu" style="
-      list-style: none;
-      padding: 1rem 0;
-      margin: 0;
-      display: none;
-      flex-direction: column;
-      gap: 1rem;
-      background-color: #2f2921;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-    ">
-      <li><%= link_to "Home", root_path, style: "color: #fff;" %></li>
-      <li><%= link_to "Gallery", gallery_path, style: "color: #fff;" %></li>
-      <li><%= link_to "Contact", contact_path, style: "color: #fff;" %></li>
+    <ul class="menu-links">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Gallery", gallery_path %></li>
+      <li><%= link_to "Contact", contact_path %></li>
     </ul>
   </nav>
 </header>
+
+<style>
+  .site-header {
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    position: absolute;
+    padding: 1em;
+  }
+
+  #menu {
+    background-color: #19171b;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 1em;
+  }
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  .site-title {
+    position: absolute;
+    color: #fff;
+    margin: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .menu-links {
+    padding-left: 0;
+    display: flex;
+    list-style: none;
+    height: 100vh;
+    margin: 3em 1em 0;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  @media (min-width: 600px) {
+    .menu-links {
+      border-radius: 15px;
+    }
+  }
+
+  .menu-links li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 0.3em 1.5em;
+    border-radius: 5px;
+  }
+
+  .menu-links li a:hover {
+    background-color: #6666;
+  }
+
+  #menu-close {
+    position: absolute;
+    left: 1em;
+  }
+
+  #menu-close svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+  }
+</style>

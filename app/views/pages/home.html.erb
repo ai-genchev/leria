@@ -1,74 +1,180 @@
-<section style="text-align: center; position: relative">
-  <div style="position: relative; width: 100%; height: 85vh; overflow: hidden;">
-    <img src="<%= asset_path('lambo.jpg') %>" alt="Hero" style="
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(60%);
-    ">
+<section class="hero">
+  <div class="hero-image-container">
+    <img src="<%= asset_path('lambo.jpg') %>" alt="Hero" class="hero-image">
   </div>
-  <p style="
-    font-size: 1.2rem;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 50%;
-    transform: translateX(-50%);
-    text-transform: uppercase;
-
-  ">
+  <p class="hero-caption">
     Content creation for brands
-    <a
-    style="
-      color: #fff;
-      background-color: #000;
-      border-radius: 50px;
-      border: 1px solid #fff;
-      text-decoration: none;
-      padding: 8px 24px;
-      display: block;
-      width: fit-content;
-      margin: 8px auto;
-    "
-    href="/contact">
-      CONTACT
-    </a>
+    <a href="/contact" class="hero-button">CONTACT</a>
   </p>
 </section>
 
-<section style="padding: 2rem 1rem;">
-  <h2 style="color: #9e8123;">I am Random Name</h2>
-  <p>I specialize in capturing high-end automotive beauty, elegant weddings, and stylish commercial spaces.</p>
+<section class="intro">
+  <img src="<%= asset_path('martin.jpg') %>" alt="Martin Nikolaev" class="intro-image">
+  <div class="intro-details">
+    <h2>About Me</h2>
+    <p>I make high-quality videos and photos that help brands stand out — especially when it comes to cars. There’s something about capturing a fast car in the right light that I never get tired of. I’ve worked with luxury dealerships, rental services, and individual collectors to bring their vehicles to life on screen. Alongside that, I also shoot weddings and commercial spaces with the same attention to detail. Whatever the subject, I focus on clean, polished visuals that reflect the style and quality of each client.</p>
+  </div>
 </section>
 
-<section style="padding: 2rem 1rem;">
-  <h2 style="color: #9e8123;">What I Photograph</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-    <% ["Luxury Cars", "Weddings", "Hotel Interiors"].each do |item| %>
-      <div style="flex: 1 1 30%; background-color: #563a17; padding: 1rem; border-radius: 10px;">
-        <img src="<%= asset_path('not-found.jpg') %>" alt="<%= item %>" style="width: 100%; height: auto; border-radius: 8px;">
-        <h3 style="color: #9e8123; margin-top: 0.5rem;"><%= item %></h3>
+<section class="subjects">
+  <h2>What I Photograph</h2>
+  <div class="subjects-grid">
+    <% ["Luxury Cars", "Restaurants", "Real State"].each do |item| %>
+      <div class="subject-card">
+        <img src="<%= asset_path('not-found.jpg') %>" alt="<%= item %>" class="subject-image">
+        <h3><%= item %></h3>
       </div>
     <% end %>
   </div>
 </section>
 
-<section style="text-align: center; padding: 2rem 1rem;">
+<section class="social-section">
   <p>Follow me for more:</p>
-  <div>
-    <a href="#" style="color: #9e8123; margin: 0 0.5rem;">Instagram</a>
-    <a href="#" style="color: #9e8123; margin: 0 0.5rem;">TikTok</a>
-    <a href="#" style="color: #9e8123; margin: 0 0.5rem;">YouTube</a>
+  <div class="social-links">
+    <a href="https://www.instagram.com/martin_nikolaev/">Instagram</a>
+    <a href="https://www.tiktok.com/@martin_nikolaev">TikTok</a>
+    <a href="https://www.youtube.com/@martin.nikolaev">YouTube</a>
   </div>
 </section>
 
-<section style="padding: 2rem 1rem;">
-  <h2 style="color: #9e8123;">About My Work</h2>
+<section class="about-section">
+  <h2>About My Work</h2>
   <p>I capture high-end visuals with a focus on automotive elegance. Whether it’s a Ferrari, a bridal moment, or a boutique hotel — every frame is composed with care.</p>
-
-  <details style="margin-top: 1rem;">
-    <summary style="cursor: pointer; color: #9e8123;">Do you work internationally?</summary>
+  <details class="faq">
+    <summary>Do you work internationally?</summary>
     <p>Yes, I travel worldwide for select projects.</p>
   </details>
 </section>
+
+<style>
+  .hero {
+    text-align: center;
+    position: relative;
+  }
+
+  .hero-image-container {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+  }
+
+  @media (min-width: 600px) {
+    .hero-image-container {
+      height: 600px;
+    }
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+  }
+
+  .hero-caption {
+    font-size: 1.2rem;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+  }
+
+  .hero-button {
+    color: #fff;
+    background-color: #19171b;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    text-decoration: none;
+    padding: 6px 24px;
+    display: block;
+    width: fit-content;
+    margin: 8px auto;
+  }
+
+  .hero-button:hover {
+    color: #19171b;
+    background-color: #fff;
+  }
+
+  .intro {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .intro-image {
+    width: 100%;
+    max-width: 360px;
+    height: 360px;
+    object-fit: cover;
+    border: 1px solid #fff;
+    padding: 4px;
+  }
+
+  .intro-details {
+    width: 100%;
+    margin: 0 2em 1em;
+  }
+
+  .intro-details p {
+    font-size: 1.2rem;
+  }
+
+  .intro, .subjects, .social-section, .about-section {
+    padding: 2rem 1rem;
+  }
+
+  .intro h2,
+  .subjects h2,
+  .about-section h2 {
+    color: #fff;
+    text-align: center;
+  }
+
+  .subjects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .subject-card {
+    flex: 1 1 30%;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .subject-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .subject-card h3 {
+    color: #fff;
+    margin-top: 0.5rem;
+  }
+
+  .social-section {
+    text-align: center;
+  }
+
+  .social-links a {
+    color: #fff;
+    margin: 0 0.5rem;
+    text-decoration: none;
+  }
+
+  .faq {
+    margin-top: 1rem;
+  }
+
+  .faq summary {
+    cursor: pointer;
+    color: #9e8123;
+  }
+</style>
